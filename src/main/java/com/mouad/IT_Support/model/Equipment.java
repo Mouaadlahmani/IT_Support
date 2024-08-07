@@ -1,5 +1,6 @@
 package com.mouad.IT_Support.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mouad.IT_Support.model.enums.EquipmentStatut;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -26,9 +27,11 @@ public class Equipment {
 
 
     @OneToMany(mappedBy = "equipment")
+    @JsonIgnore
     private List<HistoriquePanne> historiques;
 
     @OneToMany(mappedBy = "equipment")
+    @JsonIgnore
     private List<Ticket> tickets;
 
 

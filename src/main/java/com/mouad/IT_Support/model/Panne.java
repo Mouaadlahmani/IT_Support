@@ -1,5 +1,6 @@
 package com.mouad.IT_Support.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,9 +18,14 @@ public class Panne {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long panneId;
     private String name;
-    @Enumerated(EnumType.STRING)
-
 
     @OneToMany(mappedBy = "panne")
+    @JsonIgnore
     private List<HistoriquePanne> historiques;
+
+    @OneToMany(mappedBy = "panne")
+    @JsonIgnore
+    private List<Ticket> tickets;
+
+
 }
