@@ -6,7 +6,7 @@ import com.mouad.IT_Support.service.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -14,10 +14,9 @@ public class TicketServiceImpl implements TicketService {
 
     @Autowired
     TicketRepository ticketRepository;
-
     @Override
     public Ticket addTicket(Ticket ticket) {
-        ticket.setDateDeCreation(LocalDate.now());
+        ticket.setDateDeCreation(LocalDateTime.now());
         return ticketRepository.save(ticket);
     }
 
