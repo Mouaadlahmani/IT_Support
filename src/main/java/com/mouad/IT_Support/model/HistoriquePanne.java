@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 
 @Entity
@@ -17,7 +17,7 @@ public class HistoriquePanne {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDateTime datePanne;
+    private LocalDate datePanne;
 
     @ManyToOne
     @JoinColumn(name = "panne_id")
