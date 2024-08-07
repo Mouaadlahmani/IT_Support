@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -17,8 +20,13 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ticketId;
     private String description;
+    private LocalDate dateDeCreation;
     @Enumerated(EnumType.STRING)
     private EtatTicket statut;
+
+    @ManyToOne
+    @JoinColumn(name = "technicien_id")
+    private Technicien technicien;
 
     @ManyToOne
     @JoinColumn(name = "utilisateur_id")
@@ -26,6 +34,10 @@ public class Ticket {
 
     @ManyToOne
     @JoinColumn(name = "equipementId")
-    private Equipment equipment; // Change from 'equipments' to 'equipment'
+    private Equipment equipment;
+
+    @ManyToOne
+    @JoinColumn(name = "panneId")
+    private Panne panne;
 
 }
