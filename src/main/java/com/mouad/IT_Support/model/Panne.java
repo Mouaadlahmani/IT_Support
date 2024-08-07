@@ -21,10 +21,6 @@ public class Panne {
 
     @OneToMany(mappedBy = "panne")
     @JsonIgnore
-    private List<HistoriquePanne> historiques;
-
-    @OneToMany(mappedBy = "panne")
-    @JsonIgnore
     private List<Ticket> tickets;
 
 
