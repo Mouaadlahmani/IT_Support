@@ -25,11 +25,6 @@ public class Equipment {
     @Enumerated(EnumType.STRING)
     private EquipmentStatut statut;
 
-
-    @OneToMany(mappedBy = "equipment")
-    @JsonIgnore
-    private List<HistoriquePanne> historiques;
-
     @OneToMany(mappedBy = "equipment")
     @JsonIgnore
     private List<Ticket> tickets;
