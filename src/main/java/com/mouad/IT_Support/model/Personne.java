@@ -1,4 +1,5 @@
 package com.mouad.IT_Support.model;
+import com.mouad.IT_Support.model.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,11 +11,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="personne_type")
-public class Personne {
+public class Personne{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
     private String email;
     private String password;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }
