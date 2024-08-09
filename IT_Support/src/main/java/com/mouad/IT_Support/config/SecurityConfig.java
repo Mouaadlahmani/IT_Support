@@ -25,10 +25,13 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/auth/authenticate").permitAll()
                         .requestMatchers("/api/ticket/statut/**", "/api/ticket/tickets/**").hasAuthority("TECHNICIEN")
-                        .requestMatchers("/api/auth/register/**", "/api/equipment/**",
-                                "/api/panne/**","/api/ticket/all","/api/ticket/assigner/**",
-                                "/api/techniciens","/api/utilisateurs").hasAuthority("ADMIN")
+
+                        .requestMatchers("/api/auth/register/**", "/api/equipment/add","/api/equipment/edit/**","/api/equipment/delete/**",
+                                "api/panne/add","/api/panne/edit/**","/api/panne/delete/**", "/api/ticket/all","/api/ticket/assigner/**",
+                                "/api/equipment/statut/**", "/api/techniciens","/api/utilisateurs").hasAuthority("ADMIN")
+
                         .requestMatchers("/api/ticket/add","/api/ticket/mytickets/**").hasAuthority("UTILISATEUR")
+                        .requestMatchers("/api/panne/all","/api/equipment/all").hasAnyAuthority("ADMIN","UTILISATEUR")
                         .anyRequest()
                         .authenticated()
                 )
