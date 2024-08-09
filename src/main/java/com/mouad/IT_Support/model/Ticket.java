@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 
 @Entity
@@ -20,7 +20,7 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ticketId;
     private String description;
-    private LocalDateTime dateDeCreation;
+    private LocalDate dateDeCreation;
     @Enumerated(EnumType.STRING)
     private EtatTicket statut;
 
