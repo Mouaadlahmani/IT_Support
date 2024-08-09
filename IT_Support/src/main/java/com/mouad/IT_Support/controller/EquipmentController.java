@@ -30,4 +30,8 @@ public class EquipmentController {
     public Equipment editEquipment(@PathVariable Long id,@RequestBody Equipment equipment){
         return equipmentService.editEquipment(id, equipment);
     }
+    @PutMapping("/statut/{id}")
+    public Equipment changeStatut(@PathVariable Long id, @RequestBody Equipment equipment){
+        return equipmentService.changeEquipmentStatut(id, equipment);
+    }
 }
