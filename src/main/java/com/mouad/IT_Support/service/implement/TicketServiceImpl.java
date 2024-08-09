@@ -3,6 +3,7 @@ package com.mouad.IT_Support.service.implement;
 import com.mouad.IT_Support.model.Technicien;
 import com.mouad.IT_Support.model.Ticket;
 import com.mouad.IT_Support.model.Utilisateur;
+import com.mouad.IT_Support.model.enums.EtatTicket;
 import com.mouad.IT_Support.repository.PersonneRepository;
 import com.mouad.IT_Support.repository.TechnicienRepository;
 import com.mouad.IT_Support.repository.TicketRepository;
@@ -28,6 +29,7 @@ public class TicketServiceImpl implements TicketService {
     public Ticket addTicket(Ticket ticket) {
         Utilisateur utilisateur = (Utilisateur) personneRepository.findById(ticket.getUtilisateur().getId())
                 .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
+        ticket.setStatut(EtatTicket.NOTRAITE);
         ticket.setUtilisateur(utilisateur);
         ticket.setDateDeCreation(LocalDate.now());
         return ticketRepository.save(ticket);
@@ -57,18 +59,13 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public Ticket assignerTicket(Long id, Ticket ticket) {
-        ticketRepository.findById(id);
 
-        Ticket assignerTicked = new Ticket();
+        Ticket assignerTicked = ticketRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Ticket not found"));
 
-        assignerTicked.setTicketId(id);
-        assignerTicked.setUtilisateur(ticket.getUtilisateur());
-        assignerTicked.setPanne(ticket.getPanne());
-        assignerTicked.setDateDeCreation(ticket.getDateDeCreation());
-        assignerTicked.setStatut(ticket.getStatut());
-        assignerTicked.setDescription(ticket.getDescription());
-        assignerTicked.setEquipment(ticket.getEquipment());
-        assignerTicked.setTechnicien(ticket.getTechnicien());
+        Technicien technicien = (Technicien) personneRepository.findById(ticket.getTechnicien().getId())
+                .orElseThrow(() -> new RuntimeException("Technicien not found"));
+        assignerTicked.setTechnicien(technicien);
 
 
         return ticketRepository.save(assignerTicked);
@@ -77,17 +74,10 @@ public class TicketServiceImpl implements TicketService {
     @Override
     public Ticket changerStatut(Long id, Ticket ticket) {
 
-        ticketRepository.findById(id);
+        Ticket ticketStaut = ticketRepository.findById(id)
+                .orElseThrow(() ->new RuntimeException("Ticket not found"));
 
-        Ticket ticketStaut = new Ticket();
-        ticketStaut.setTicketId(id);
-        ticketStaut.setUtilisateur(ticket.getUtilisateur());
-        ticketStaut.setPanne(ticket.getPanne());
-        ticketStaut.setDateDeCreation(ticket.getDateDeCreation());
         ticketStaut.setStatut(ticket.getStatut());
-        ticketStaut.setDescription(ticket.getDescription());
-        ticketStaut.setEquipment(ticket.getEquipment());
-        ticketStaut.setTechnicien(ticket.getTechnicien());
 
         return ticketRepository.save(ticketStaut);
     }
