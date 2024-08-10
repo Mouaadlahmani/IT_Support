@@ -1,10 +1,12 @@
-<h3>Ajouter Equipment</h3>
-
+<div class="container">
+<h3>Ajouter Panne</h3>
+<div class="formulaire">
 <form (ngSubmit)="onSubmit()">
   <div class="form-goup">
-    <label>Name</label>
-    <input type="text" class="form-control" [(ngModel)]="panne.name" name="name" id="name">
+    <label style="color: white">Name</label>
+    <input style="width: 25rem" type="text" class="form-control" [(ngModel)]="panne.name" name="name" id="name">
   </div>
   <button class="btn btn-success">Submit</button>
-
 </form>
+</div>
+</div>
