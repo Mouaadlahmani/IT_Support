@@ -32,4 +32,8 @@ export class EquipementService {
   deleteEquipement(id: Number):Observable<Object>{
     return this.httpClient.delete<Equipement>(`${this.baseUrl}delete/${id}`)
   }
+
+  changerStaut(id: number, equipement: Equipement): Observable<Object>{
+    return this.httpClient.put<Equipement>(`${this.baseUrl}statut/${id}`,equipement)
+  }
 }
