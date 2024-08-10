@@ -11,6 +11,7 @@ import { UpdateEquipementComponent } from './components/update-equipement/update
 import { CreatePanneComponent } from './components/create-panne/create-panne.component';
 import { PannesComponent } from './components/pannes/pannes.component';
 import { ChangerStatutComponent } from './components/changer-statut/changer-statut.component';
+import { UpdatePanneComponent } from './components/update-panne/update-panne.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,9 @@ import { ChangerStatutComponent } from './components/changer-statut/changer-stat
     AddEquipementComponent,
     UpdateEquipementComponent,
     CreatePanneComponent,
-    PannesComponent
-    ChangerStatutComponent
+    PannesComponent,
+    ChangerStatutComponent,
+    UpdatePanneComponent
   ],
   imports: [
     BrowserModule,

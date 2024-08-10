@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Panne} from "../classes/panne";
 import {Observable} from "rxjs";
+import {Equipement} from "../classes/equipement";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,14 @@ export class PanneService {
 
   getPannes(): Observable<Panne[]>{
     return this.httpClient.get<Panne[]>(this.baseUrl+'all')
+  }
+
+  panneById(id: number): Observable<Panne>{
+    return this.httpClient.get<Panne>(`${this.baseUrl}${id}`)
+  }
+
+  updatePanne(id: number, panne: Panne):Observable<Object>{
+    return this.httpClient.put<Equipement>(`${this.baseUrl}edit/${id}`,panne)
   }
 
   createPanne(panne: Panne):Observable<Object>{

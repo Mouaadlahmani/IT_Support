@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PanneService} from "../../services/panne.service";
 import {Panne} from "../../classes/panne";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-pannes',
@@ -13,11 +14,16 @@ export class PannesComponent implements OnInit{
 
   id!:number;
 
-  constructor(private panneService: PanneService) {
+  constructor(private panneService: PanneService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
    this.getPannes()
+  }
+
+  updatePanne(id: Number) {
+    this.router.navigate(['updatePanne', id])
   }
 
   getPannes(){

@@ -1,5 +1,6 @@
-<h2>Equipment List</h2>
 <div class="container">
+<h2>Equipment List</h2>
+<div class="cards">
   <div class="card" style="width: 17rem;" *ngFor="let equipment of equipments">
     <img class="card-img-top" src="{{equipment.imgUrl}}" alt="Card image cap">
     <div class="card-body">
@@ -12,5 +13,6 @@
       <a (click)="changerEquipement(equipment.equipementId)" class="btn btn-close-white">Changer Statut</a>
     </div>
   </div>
+</div>
 </div>
 <router-outlet></router-outlet>

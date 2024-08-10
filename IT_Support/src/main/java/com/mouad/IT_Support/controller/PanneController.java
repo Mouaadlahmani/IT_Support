@@ -25,6 +25,11 @@ public class PanneController {
         return panneService.getAllPannes();
     }
 
+    @GetMapping("/{id}")
+    public Panne panneById(@PathVariable Long id){
+        return panneService.getPanneById(id);
+    }
+
     @PutMapping("/edit/{id}")
     public Panne editPanne(@PathVariable Long id, @RequestBody Panne panne){
         return panneService.updatePanne(id,panne);
