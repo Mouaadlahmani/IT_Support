@@ -9,4 +9,5 @@ public interface PanneService {
     Panne updatePanne(Long id, Panne panne);
     void deletePanne(Long id);
     List<Panne> getAllPannes();
+    Panne getPanneById(Long id);
 }

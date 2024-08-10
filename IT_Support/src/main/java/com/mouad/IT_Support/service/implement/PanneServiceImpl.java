@@ -41,4 +41,11 @@ public class PanneServiceImpl implements PanneService {
     public List<Panne> getAllPannes() {
         return panneRepository.findAll();
     }
+
+    @Override
+    public Panne getPanneById(Long id) {
+        return panneRepository.findById(id).orElseThrow(
+                ()-> new RuntimeException("Panne not found")
+        );
+    }
 }
