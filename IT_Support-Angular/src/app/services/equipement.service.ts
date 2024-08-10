@@ -16,5 +16,7 @@ export class EquipementService {
     return this.httpClient.get<Equipement[]>(this.baseUrl+"all");
   }
 
-
+  addEquipment(equipment: Equipement): Observable<Object>{
+    return this.httpClient.post(this.baseUrl+"add", equipment)
+  }
 }
