@@ -1,0 +1,12 @@
+<h2>Equipment List</h2>
+<div class="container">
+  <div class="card" style="width: 18rem;" *ngFor="let equipment of equipments">
+    <img class="card-img-top" src="{{equipment.imgUrl}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ equipment.name }}</h5>
+      <p class="card-text">{{equipment.statut}}</p>
+      <p class="card-text">{{equipment.description}}</p>
+      <a href="#" class="btn btn-primary">Signaler un panne</a>
+    </div>
+  </div>
+</div>

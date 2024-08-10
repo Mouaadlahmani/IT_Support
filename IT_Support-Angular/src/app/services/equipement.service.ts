@@ -15,4 +15,6 @@ export class EquipementService {
   getEquipments(): Observable<Equipement[]>{
     return this.httpClient.get<Equipement[]>(this.baseUrl+"all");
   }
+
+
 }
