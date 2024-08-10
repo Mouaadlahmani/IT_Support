@@ -7,6 +7,7 @@ import {UpdateEquipementComponent} from "./components/update-equipement/update-e
 import {CreatePanneComponent} from "./components/create-panne/create-panne.component";
 import {PannesComponent} from "./components/pannes/pannes.component";
 import {ChangerStatutComponent} from "./components/changer-statut/changer-statut.component";
+import {UpdatePanneComponent} from "./components/update-panne/update-panne.component";
 
 const routes: Routes = [
   {path:'', component: AppComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'updateEquipement/:id', component: UpdateEquipementComponent},
   {path:'addPanne', component: CreatePanneComponent},
   {path:'pannes', component: PannesComponent},
-  {path:'statut/:id', component:ChangerStatutComponent}
+  {path:'statut/:id', component:ChangerStatutComponent},
+  {path:'updatePanne/:id', component: UpdatePanneComponent}
 ];
 
 @NgModule({

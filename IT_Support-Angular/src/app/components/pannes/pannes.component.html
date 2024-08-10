@@ -3,8 +3,8 @@
   <div class="card" style="width: 17rem;" *ngFor="let panne of panneList">
     <div class="card-body">
       <h5 class="card-title">{{ panne.name }}</h5>
+      <a (click)="updatePanne(panne.panneId)" class="btn btn-primary">Modifier</a>
       <a (click)="deletePanne(panne.panneId)" class="btn btn-danger">Suprimmer</a>
-
     </div>
   </div>
 </div>
