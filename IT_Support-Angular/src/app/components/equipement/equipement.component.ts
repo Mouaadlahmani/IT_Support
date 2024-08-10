@@ -32,5 +32,13 @@ export class EquipementComponent implements OnInit{
   this.router.navigate(['updateEquipement', id])
   }
 
+  deleteEquipement(id: Number){
+    this.equipmentService.deleteEquipement(id).subscribe(
+      data=>{
+        console.log(data)
+        this.getEquipments()
+      }
+    )
+  }
 
 }
