@@ -19,7 +19,7 @@ import { ChangerStatutComponent } from './components/changer-statut/changer-stat
     AddEquipementComponent,
     UpdateEquipementComponent,
     CreatePanneComponent,
-    PannesComponent
+    PannesComponent,
     ChangerStatutComponent
   ],
   imports: [

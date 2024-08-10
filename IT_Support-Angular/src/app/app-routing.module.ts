@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:'equipements', component: EquipementComponent},
   {path:'updateEquipement/:id', component: UpdateEquipementComponent},
   {path:'addPanne', component: CreatePanneComponent},
-  {path:'pannes', component: PannesComponent}
+  {path:'pannes', component: PannesComponent},
   {path:'statut/:id', component:ChangerStatutComponent}
 ];
 
