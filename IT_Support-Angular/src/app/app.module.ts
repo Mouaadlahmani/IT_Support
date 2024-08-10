@@ -8,6 +8,8 @@ import { EquipementComponent } from './components/equipement/equipement.componen
 import { AddEquipementComponent } from './components/add-equipement/add-equipement.component';
 import {FormsModule} from "@angular/forms";
 import { UpdateEquipementComponent } from './components/update-equipement/update-equipement.component';
+import { CreatePanneComponent } from './components/create-panne/create-panne.component';
+import { PannesComponent } from './components/pannes/pannes.component';
 import { ChangerStatutComponent } from './components/changer-statut/changer-statut.component';
 
 @NgModule({
@@ -16,6 +18,8 @@ import { ChangerStatutComponent } from './components/changer-statut/changer-stat
     EquipementComponent,
     AddEquipementComponent,
     UpdateEquipementComponent,
+    CreatePanneComponent,
+    PannesComponent
     ChangerStatutComponent
   ],
   imports: [
