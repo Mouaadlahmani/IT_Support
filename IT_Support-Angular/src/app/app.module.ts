@@ -8,13 +8,15 @@ import { EquipementComponent } from './components/equipement/equipement.componen
 import { AddEquipementComponent } from './components/add-equipement/add-equipement.component';
 import {FormsModule} from "@angular/forms";
 import { UpdateEquipementComponent } from './components/update-equipement/update-equipement.component';
+import { ChangerStatutComponent } from './components/changer-statut/changer-statut.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EquipementComponent,
     AddEquipementComponent,
-    UpdateEquipementComponent
+    UpdateEquipementComponent,
+    ChangerStatutComponent
   ],
   imports: [
     BrowserModule,

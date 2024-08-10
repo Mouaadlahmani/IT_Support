@@ -1,0 +1,21 @@
+<h3>Ajouter Equipment</h3>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="form-goup">
+    <label>{{equipement.name}}</label>
+  </div>
+
+  <div class="form-goup">
+    <label>{{equipement.description}}</label>
+  </div>
+
+  <div class="form-goup">
+    <label></label>
+    <input type="text" class="form-control" [(ngModel)]="equipement.statut" name="statut" id="statut">
+  </div>
+  <label for="statut">Statut</label>
+
+
+  <button class="btn btn-success">Submit</button>
+
+</form>

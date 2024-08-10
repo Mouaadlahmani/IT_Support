@@ -4,12 +4,14 @@ import {EquipementComponent} from "./components/equipement/equipement.component"
 import {AddEquipementComponent} from "./components/add-equipement/add-equipement.component";
 import {AppComponent} from "./app.component";
 import {UpdateEquipementComponent} from "./components/update-equipement/update-equipement.component";
+import {ChangerStatutComponent} from "./components/changer-statut/changer-statut.component";
 
 const routes: Routes = [
   {path:'', component: AppComponent},
   {path:'addEquipement', component:AddEquipementComponent},
   {path:'equipements', component: EquipementComponent},
-  {path:'updateEquipement/:id', component: UpdateEquipementComponent}
+  {path:'updateEquipement/:id', component: UpdateEquipementComponent},
+  {path:'statut/:id', component:ChangerStatutComponent}
 ];
 
 @NgModule({
