@@ -1,5 +1,5 @@
 export class Equipement {
-  equipmentId!: Number;
+  equipementId!: Number;
   name!: String;
   imgUrl!: String;
   description!: String;
