@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Equipement} from "../../classes/equipement";
 import {EquipementService} from "../../services/equipement.service";
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-equipement',
@@ -11,7 +12,8 @@ export class AddEquipementComponent implements OnInit{
 
   equipment: Equipement = new Equipement();
 
-  constructor(private equipmentService: EquipementService) { }
+  constructor(private equipmentService: EquipementService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +22,7 @@ export class AddEquipementComponent implements OnInit{
     this.equipmentService.addEquipment(this.equipment).subscribe(
       data => {
         console.log(data)
+        this.router.navigate(['equipements'])
       }
     )
   }

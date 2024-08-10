@@ -1,0 +1,22 @@
+<h3>Modifier Equipment</h3>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="form-goup">
+    <label>Name</label>
+    <input type="text" class="form-control" [(ngModel)]="equipement.name" name="name" id="name">
+  </div>
+
+  <div class="form-goup">
+    <label>Description</label>
+    <input type="text" class="form-control" [(ngModel)]="equipement.description" name="description" id="description">
+  </div>
+
+  <div class="form-goup">
+    <label>Image Url</label>
+    <input type="text" class="form-control" [(ngModel)]="equipement.imgUrl" name="imgUrl" id="img">
+  </div>
+
+  <button  class="btn btn-success">Submit</button>
+
+</form>
+<router-outlet></router-outlet>

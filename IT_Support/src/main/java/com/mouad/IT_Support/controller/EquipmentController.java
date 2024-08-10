@@ -35,4 +35,8 @@ public class EquipmentController {
     public Equipment changeStatut(@PathVariable Long id, @RequestBody Equipment equipment){
         return equipmentService.changeEquipmentStatut(id, equipment);
     }
+    @GetMapping("/{id}")
+    public Equipment getEquipment(@PathVariable Long id){
+        return equipmentService.equipmentById(id);
+    }
 }

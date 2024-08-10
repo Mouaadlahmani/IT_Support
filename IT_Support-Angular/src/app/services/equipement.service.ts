@@ -19,4 +19,17 @@ export class EquipementService {
   addEquipment(equipment: Equipement): Observable<Object>{
     return this.httpClient.post(this.baseUrl+"add", equipment)
   }
+
+  equipementById(id: number): Observable<Equipement>{
+    return this.httpClient.get<Equipement>(`${this.baseUrl}${id}`)
+
+  }
+
+  updateEquipement(id: number, equipement: Equipement):Observable<Object>{
+    return this.httpClient.put<Equipement>(`${this.baseUrl}edit/${id}`,equipement)
+  }
+
+  deleteEquipement(id: Number):Observable<Object>{
+    return this.httpClient.delete<Equipement>(`${this.baseUrl}delete/${id}`)
+  }
 }

@@ -1,4 +1,5 @@
 .container{
   display: flex;
-  gap: 2em;
+  gap: 0.5em;
+  flex-wrap: wrap;
 }

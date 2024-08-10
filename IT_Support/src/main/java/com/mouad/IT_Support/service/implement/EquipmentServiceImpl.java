@@ -50,4 +50,11 @@ public class EquipmentServiceImpl implements EquipmentService {
         equipment1.setStatut(equipment.getStatut());
         return equipmentRepository.save(equipment1);
     }
+
+    @Override
+    public Equipment equipmentById(Long id) {
+        return equipmentRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Equipment Not Found")
+        );
+    }
 }

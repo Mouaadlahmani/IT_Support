@@ -1,12 +1,15 @@
 <h2>Equipment List</h2>
 <div class="container">
-  <div class="card" style="width: 18rem;" *ngFor="let equipment of equipments">
+  <div class="card" style="width: 17rem;" *ngFor="let equipment of equipments">
     <img class="card-img-top" src="{{equipment.imgUrl}}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{ equipment.name }}</h5>
       <p class="card-text">{{equipment.statut}}</p>
       <p class="card-text">{{equipment.description}}</p>
-      <a href="#" class="btn btn-primary">Signaler un panne</a>
+
+      <a (click)="updateEquipement(equipment.equipementId)" class="btn btn-primary">Modifier</a>
+      <a (click)="deleteEquipement(equipment.equipementId)" class="btn btn-danger">Suprimmer</a>
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>
