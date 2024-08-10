@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
 import { UpdateEquipementComponent } from './components/update-equipement/update-equipement.component';
 import { CreatePanneComponent } from './components/create-panne/create-panne.component';
 import { PannesComponent } from './components/pannes/pannes.component';
+import { ChangerStatutComponent } from './components/changer-statut/changer-statut.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PannesComponent } from './components/pannes/pannes.component';
     UpdateEquipementComponent,
     CreatePanneComponent,
     PannesComponent
+    ChangerStatutComponent
   ],
   imports: [
     BrowserModule,
