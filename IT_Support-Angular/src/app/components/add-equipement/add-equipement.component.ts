@@ -28,7 +28,7 @@ export class AddEquipementComponent implements OnInit{
   }
 
   onSubmit(){
-    this.equipment.statut="DISPONIBLE"
+    this.equipment.statut=0
     console.log(this.equipment)
     this.addEquipment()
   }
