@@ -1,9 +1,11 @@
 package com.mouad.IT_Support.service.implement;
 
+import com.mouad.IT_Support.model.Equipment;
 import com.mouad.IT_Support.model.Technicien;
 import com.mouad.IT_Support.model.Ticket;
 import com.mouad.IT_Support.model.Utilisateur;
 import com.mouad.IT_Support.model.enums.EtatTicket;
+import com.mouad.IT_Support.repository.EquipmentRepository;
 import com.mouad.IT_Support.repository.PersonneRepository;
 import com.mouad.IT_Support.repository.TechnicienRepository;
 import com.mouad.IT_Support.repository.TicketRepository;
@@ -24,6 +26,8 @@ public class TicketServiceImpl implements TicketService {
     TechnicienRepository technicienRepository;
     @Autowired
     private PersonneRepository personneRepository;
+    @Autowired
+    private EquipmentRepository equipmentRepository;
 
     @Override
     public Ticket addTicket(Ticket ticket) {
@@ -54,6 +58,15 @@ public class TicketServiceImpl implements TicketService {
                 .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
         List<Ticket> tickets = ticketRepository.findAllByUtilisateur(utilisateur);
         return tickets;
+    }
+
+    @Override
+    public List<Ticket> findByEquipment(Long id) {
+        Equipment equipment = equipmentRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Equipment not found")
+        );
+        List<Ticket> equipments = ticketRepository.findAllByEquipment(equipment);
+        return equipments;
     }
 
 

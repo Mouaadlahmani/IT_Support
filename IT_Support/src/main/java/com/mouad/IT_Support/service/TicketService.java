@@ -10,6 +10,7 @@ public interface TicketService {
     List<Ticket> getAllTickets();
     List<Ticket> findByTechnicien(Long id);
     List<Ticket> findByUtilisateur(Long id);
+    List<Ticket> findByEquipment(Long id);
     Ticket assignerTicket(Long id, Ticket ticket);
     Ticket changerStatut(Long id, Ticket ticket);
 }

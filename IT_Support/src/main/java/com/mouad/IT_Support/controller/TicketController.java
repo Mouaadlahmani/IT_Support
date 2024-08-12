@@ -26,6 +26,12 @@ public class TicketController {
         return ticketService.getAllTickets();
     }
 
+    @GetMapping("/equipmentTickets/{id}")
+    public List<Ticket> ticketsByEquipment(@PathVariable Long id){
+        return ticketService.findByEquipment(id);
+    }
+
+
     @GetMapping("/tickets/{id}")
     public List<Ticket> ticketsByTechnicien(@PathVariable Long id){
         return ticketService.findByTechnicien(id);
