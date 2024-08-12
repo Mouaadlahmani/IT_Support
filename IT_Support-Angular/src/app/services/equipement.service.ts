@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Equipement} from "../classes/equipement";
 
@@ -13,7 +13,7 @@ export class EquipementService {
   constructor(private httpClient: HttpClient) { }
 
   getEquipments(): Observable<Equipement[]>{
-    return this.httpClient.get<Equipement[]>(this.baseUrl+"all");
+    return this.httpClient.get<Equipement[]>(this.baseUrl+"all")
   }
 
   addEquipment(equipment: Equipement): Observable<Object>{
@@ -35,5 +35,18 @@ export class EquipementService {
 
   changerStaut(id: number, equipement: Equipement): Observable<Object>{
     return this.httpClient.put<Equipement>(`${this.baseUrl}statut/${id}`,equipement)
+  }
+
+  private CreateAuthorizationHeader(){
+    const jwtToken = localStorage.getItem('jwt');
+    if(jwtToken){
+      console.log("Jwt token found in local storage ",jwtToken);
+      return new HttpHeaders().set(
+        "Authorization", "Bearer " + jwtToken
+      )
+    }else{
+      console.log("Jwt token not found in local storage")
+    }
+    return null;
   }
 }

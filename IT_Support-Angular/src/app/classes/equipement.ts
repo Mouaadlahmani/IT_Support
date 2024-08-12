@@ -1,10 +1,10 @@
-import {Panne} from "./panne";
+import {EquipmentStatut} from "./enums/equipment-statut";
 
 export class Equipement {
   equipementId!: Number;
   name!: String;
   imgUrl!: String;
   description!: String;
-  statut!: String;
+  statut!: EquipmentStatut;
 
 }
