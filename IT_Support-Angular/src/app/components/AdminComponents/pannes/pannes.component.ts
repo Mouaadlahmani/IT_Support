@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {PanneService} from "../../services/panne.service";
-import {Panne} from "../../classes/panne";
+import {PanneService} from "../../../services/panne.service";
+import {Panne} from "../../../classes/panne/panne";
 import {Router} from "@angular/router";
 
 @Component({

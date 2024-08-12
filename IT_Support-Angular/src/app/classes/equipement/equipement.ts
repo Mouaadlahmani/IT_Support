@@ -1,4 +1,4 @@
-import {EquipmentStatut} from "./enums/equipment-statut";
+import {EquipmentStatut} from "../enums/equipment-statut";
 
 export class Equipement {
   equipementId!: Number;
