@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {Panne} from "../../classes/panne";
-import {PanneService} from "../../services/panne.service";
+import {Panne} from "../../../classes/panne/panne";
+import {PanneService} from "../../../services/panne.service";
 
 @Component({
   selector: 'app-update-panne',

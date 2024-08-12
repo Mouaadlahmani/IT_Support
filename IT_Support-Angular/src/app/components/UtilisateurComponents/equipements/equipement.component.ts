@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Equipement} from "../../classes/equipement";
-import {EquipementService} from "../../services/equipement.service";
+import {Equipement} from "../../../classes/equipement/equipement";
+import {EquipementService} from "../../../services/equipement.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
   templateUrl: './equipement.component.html',
   styleUrls: ['./equipement.component.css']
 })
-export class EquipementComponent implements OnInit{
+export class EquipementsComponent implements OnInit{
 
   equipments!: Equipement[];
 

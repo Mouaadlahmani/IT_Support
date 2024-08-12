@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Equipement} from "../../classes/equipement";
-import {EquipementService} from "../../services/equipement.service";
+import {Equipement} from "../../../classes/equipement/equipement";
+import {EquipementService} from "../../../services/equipement.service";
 import {Route, Router} from "@angular/router";
 
 @Component({
