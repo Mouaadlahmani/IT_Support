@@ -1,5 +1,6 @@
 package com.mouad.IT_Support.repository;
 
+import com.mouad.IT_Support.model.Equipment;
 import com.mouad.IT_Support.model.Technicien;
 import com.mouad.IT_Support.model.Ticket;
 import com.mouad.IT_Support.model.Utilisateur;
@@ -11,4 +12,7 @@ import java.util.List;
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
     List<Ticket> findAllByUtilisateur(Utilisateur utilisateur);
     List<Ticket> findAllByTechnicien(Technicien technicien);
+    List<Ticket> findAllByEquipment(Equipment equipment);
 }
+
+

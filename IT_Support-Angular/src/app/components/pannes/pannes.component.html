@@ -1,11 +1,21 @@
-<h2>Pannes List</h2>
 <div class="container">
-  <div class="card" style="width: 17rem;" *ngFor="let panne of panneList">
-    <div class="card-body">
-      <h5 class="card-title">{{ panne.name }}</h5>
-      <a (click)="updatePanne(panne.panneId)" class="btn btn-primary">Modifier</a>
-      <a (click)="deletePanne(panne.panneId)" class="btn btn-danger">Suprimmer</a>
-    </div>
-  </div>
+<h2 class="title">Pannes List</h2>
+<div class="tablaux">
+<table class="table table-dark">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Modifier</th>
+    <th scope="col">Suprimmer</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr  *ngFor="let panne of panneList">
+    <td>{{ panne.name }}</td>
+    <td><a (click)="updatePanne(panne.panneId)" class="btn btn-primary">Modifier</a></td>
+    <td><a (click)="deletePanne(panne.panneId)" class="btn btn-danger">Suprimmer</a></td>
+  </tbody>
+</table>
+</div>
 </div>
 <router-outlet></router-outlet>
