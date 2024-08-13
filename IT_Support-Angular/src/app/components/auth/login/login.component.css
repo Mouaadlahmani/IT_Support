@@ -1,0 +1,71 @@
+/* Login Form Container */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Form Elements */
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #007BFF;
+}
+
+.login-container label {
+  display: block;
+  font-size: 1em;
+  color: #343A40;
+  margin-bottom: 8px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #CED4DA;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* Submit Button */
+.login-container input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-container input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Additional Links */
+.login-container .forgot-password {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.login-container .forgot-password:hover {
+  text-decoration: underline;
+}

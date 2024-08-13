@@ -23,17 +23,17 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorize -> authorize
-//                        .requestMatchers("/api/auth/authenticate","/api/auth/register/admin").permitAll()
-//                        .requestMatchers("/api/ticket/statut/**", "/api/ticket/tickets/**").hasAuthority("TECHNICIEN")
-//
-//                        .requestMatchers("/api/auth/register/technicien*", "/api/equipment/add","/api/equipment/edit/**","/api/equipment/delete/**",
-//                                "api/panne/add","/api/panne/edit/**","/api/panne/delete/**", "/api/ticket/all","/api/ticket/assigner/**",
-//                                "/api/equipment/statut/**", "/api/techniciens","/api/utilisateurs").hasAuthority("ADMIN")
-//
-//                        .requestMatchers("/api/ticket/add","/api/ticket/mytickets/**").hasAuthority("UTILISATEUR")
-//                        .requestMatchers("/api/panne/all","/api/equipment/all").hasAnyAuthority("ADMIN","UTILISATEUR")
-                        .anyRequest().permitAll()
-//                        .authenticated()
+                        .requestMatchers("/api/auth/authenticate","/api/auth/register/admin").permitAll()
+                        .requestMatchers("/api/ticket/statut/**", "/api/ticket/tickets/**").hasAuthority("TECHNICIEN")
+
+                        .requestMatchers("/api/auth/register/technicien*", "/api/equipment/add","/api/equipment/edit/**","/api/equipment/delete/**",
+                                "api/panne/add","/api/panne/edit/**","/api/panne/delete/**", "/api/ticket/all","/api/ticket/assigner/**",
+                                "/api/equipment/statut/**", "/api/techniciens","/api/utilisateurs").hasAuthority("ADMIN")
+
+                        .requestMatchers("/api/ticket/add","/api/ticket/mytickets/**").hasAuthority("UTILISATEUR")
+                        .requestMatchers("/api/panne/all","/api/equipment/all").hasAnyAuthority("ADMIN","UTILISATEUR")
+                        .anyRequest()
+                        .authenticated()
                 )
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

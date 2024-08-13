@@ -13,40 +13,46 @@ export class EquipementService {
   constructor(private httpClient: HttpClient) { }
 
   getEquipments(): Observable<Equipement[]>{
-    return this.httpClient.get<Equipement[]>(this.baseUrl+"all")
+    const headers = this.createAuthorizationHeader();
+    return this.httpClient.get<Equipement[]>(this.baseUrl+"all",{ headers: headers || {} })
   }
 
   addEquipment(equipment: Equipement): Observable<Object>{
-    return this.httpClient.post(this.baseUrl+"add", equipment)
+    const headers = this.createAuthorizationHeader();
+    return this.httpClient.post(this.baseUrl+"add", equipment,{ headers: headers || {} })
   }
 
   equipementById(id: number): Observable<Equipement>{
-    return this.httpClient.get<Equipement>(`${this.baseUrl}${id}`)
+    const headers = this.createAuthorizationHeader();
+    return this.httpClient.get<Equipement>(`${this.baseUrl}${id}`,{ headers: headers || {} })
 
   }
 
   updateEquipement(id: number, equipement: Equipement):Observable<Object>{
-    return this.httpClient.put<Equipement>(`${this.baseUrl}edit/${id}`,equipement)
+    const headers = this.createAuthorizationHeader();
+    return this.httpClient.put<Equipement>(`${this.baseUrl}edit/${id}`,equipement,{ headers: headers || {} })
   }
 
   deleteEquipement(id: Number):Observable<Object>{
-    return this.httpClient.delete<Equipement>(`${this.baseUrl}delete/${id}`)
+    const headers = this.createAuthorizationHeader();
+    return this.httpClient.delete<Equipement>(`${this.baseUrl}delete/${id}`,{ headers: headers || {} })
   }
 
   changerStaut(id: number, equipement: Equipement): Observable<Object>{
-    return this.httpClient.put<Equipement>(`${this.baseUrl}statut/${id}`,equipement)
+    const headers = this.createAuthorizationHeader();
+    return this.httpClient.put<Equipement>(`${this.baseUrl}statut/${id}`,equipement,{ headers: headers || {} })
+  }
+  private createAuthorizationHeader(): HttpHeaders | undefined {
+    const jwtToken = localStorage.getItem('jwt');
+    if (jwtToken) {
+      console.log("JWT token found in local storage", jwtToken);
+      return new HttpHeaders().set("Authorization", "Bearer " + jwtToken);
+    } else {
+      console.log("JWT token not found in local storage");
+      return undefined;
+    }
+
   }
 
-  private CreateAuthorizationHeader(){
-    const jwtToken = localStorage.getItem('jwt');
-    if(jwtToken){
-      console.log("Jwt token found in local storage ",jwtToken);
-      return new HttpHeaders().set(
-        "Authorization", "Bearer " + jwtToken
-      )
-    }else{
-      console.log("Jwt token not found in local storage")
-    }
-    return null;
-  }
+
 }

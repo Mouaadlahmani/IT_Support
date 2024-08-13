@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/techniciens")
+@RequestMapping("/api/")
 @CrossOrigin(origins = "http://localhost:4200/")
 public class TechnicienController {
 
     @Autowired
     TechnicienService technicienService;
 
-    @GetMapping
+    @GetMapping("techniciens")
     public List<Technicien> getAllTechniciens(){
         return technicienService.getTechnicienList();
     }
