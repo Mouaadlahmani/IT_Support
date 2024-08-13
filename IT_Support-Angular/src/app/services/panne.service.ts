@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Panne} from "../classes/panne/panne";
 import {Observable} from "rxjs";
 import {Equipement} from "../classes/equipement/equipement";
@@ -14,11 +14,13 @@ export class PanneService {
   constructor(private httpClient: HttpClient) { }
 
   getPannes(): Observable<Panne[]>{
-    return this.httpClient.get<Panne[]>(this.baseUrl+'all')
+    const headers = this.CreateAuthorizationHeader();
+    return this.httpClient.get<Panne[]>(this.baseUrl+'all',{ headers: headers || {} })
   }
 
   panneById(id: number): Observable<Panne>{
-    return this.httpClient.get<Panne>(`${this.baseUrl}${id}`)
+    const headers = this.CreateAuthorizationHeader();
+    return this.httpClient.get<Panne>(`${this.baseUrl}${id}`,{ headers: headers || {} })
   }
 
   updatePanne(id: number, panne: Panne):Observable<Object>{
@@ -26,11 +28,24 @@ export class PanneService {
   }
 
   createPanne(panne: Panne):Observable<Object>{
-    return  this.httpClient.post(this.baseUrl+'add',panne)
+    const headers = this.CreateAuthorizationHeader();
+    return  this.httpClient.post(this.baseUrl+'add',panne,{ headers: headers || {} })
   }
 
   deletePanne(id:number){
-    return this.httpClient.delete(`${this.baseUrl}delete/${id}`)
+    const headers = this.CreateAuthorizationHeader();
+    return this.httpClient.delete(`${this.baseUrl}delete/${id}`,{ headers: headers || {} })
+  }
+  private CreateAuthorizationHeader(): HttpHeaders | undefined {
+    const jwtToken = localStorage.getItem('jwt');
+    if (jwtToken) {
+      console.log("JWT token found in local storage", jwtToken);
+      return new HttpHeaders().set("Authorization", "Bearer " + jwtToken);
+    } else {
+      console.log("JWT token not found in local storage");
+      return undefined;
+    }
+
   }
 
 }

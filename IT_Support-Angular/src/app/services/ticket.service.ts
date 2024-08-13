@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Ticket} from "../classes/ticket/ticket";
 
@@ -13,10 +13,23 @@ export class TicketService {
   constructor(private httpClient: HttpClient) { }
 
   getTickets(): Observable<Ticket[]>{
-    return this.httpClient.get<Ticket[]>(this.url+'all');
+    const headers = this.createAuthorizationHeader();
+    return this.httpClient.get<Ticket[]>(this.url+'all',{ headers: headers || {} });
   }
 
   addTicket(tiket: Ticket):Observable<Ticket>{
-    return this.httpClient.post<Ticket>(this.url+'add', tiket);
+    const headers = this.createAuthorizationHeader();
+    return this.httpClient.post<Ticket>(this.url+'add', tiket,{ headers: headers || {} });
+  }
+  private createAuthorizationHeader(): HttpHeaders | undefined {
+    const jwtToken = localStorage.getItem('jwt');
+    if (jwtToken) {
+      console.log("JWT token found in local storage", jwtToken);
+      return new HttpHeaders().set("Authorization", "Bearer " + jwtToken);
+    } else {
+      console.log("JWT token not found in local storage");
+      return undefined;
+    }
+
   }
 }

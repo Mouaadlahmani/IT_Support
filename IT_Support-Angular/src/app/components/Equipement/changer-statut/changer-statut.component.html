@@ -1,0 +1,23 @@
+<h3>Ajouter Equipment</h3>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="form-goup">
+    <label>{{equipement.name}}</label>
+  </div>
+
+  <div class="form-goup">
+    <label>{{equipement.description}}</label>
+  </div>
+
+  <div class="form-group">
+    <label for="etat">État de l'équipement</label>
+    <select id="etat" [(ngModel)]="equipement.statut" name="etat" class="form-control" required>
+      <option [ngValue]="stautEquipement.DISPONIBLE">Disponible</option>
+      <option [ngValue]="stautEquipement.NONDISPONIBLE">Non Disponible</option>
+    </select>
+  </div>
+
+
+  <button class="btn btn-success">Submit</button>
+
+</form>

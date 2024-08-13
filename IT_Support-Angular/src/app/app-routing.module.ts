@@ -1,27 +1,57 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {EquipementComponent} from "./components/AdminComponents/equipement/equipement.component";
-import {AddEquipementComponent} from "./components/AdminComponents/add-equipement/add-equipement.component";
+import {EquipementComponent} from "./components/Equipement/equipement/equipement.component";
+import {AddEquipementComponent} from "./components/Equipement/add-equipement/add-equipement.component";
 import {AppComponent} from "./app.component";
-import {UpdateEquipementComponent} from "./components/AdminComponents/update-equipement/update-equipement.component";
-import {CreatePanneComponent} from "./components/AdminComponents/create-panne/create-panne.component";
-import {PannesComponent} from "./components/AdminComponents/pannes/pannes.component";
-import {ChangerStatutComponent} from "./components/AdminComponents/changer-statut/changer-statut.component";
-import {UpdatePanneComponent} from "./components/AdminComponents/update-panne/update-panne.component";
+import {UpdateEquipementComponent} from "./components/Equipement/update-equipement/update-equipement.component";
+import {CreatePanneComponent} from "./components/AdminComponents/Panne/create-panne/create-panne.component";
+import {PannesComponent} from "./components/AdminComponents/Panne/pannes/pannes.component";
+import {ChangerStatutComponent} from "./components/Equipement/changer-statut/changer-statut.component";
+import {UpdatePanneComponent} from "./components/AdminComponents/Panne/update-panne/update-panne.component";
 import {TicketComponent} from "./components/AdminComponents/ticket/ticket.component";
 import {EquipementsComponent} from "./components/UtilisateurComponents/equipements/equipement.component";
+import {LoginComponent} from "./components/auth/login/login.component";
+import {UtilisateursComponent} from "./components/AdminComponents/Utilisateur/utilisateurs/utilisateurs.component";
+import {TechniciensComponent} from "./components/AdminComponents/Utilisateur/techniciens/techniciens.component";
+import {AddUtilisateurComponent} from "./components/AdminComponents/Utilisateur/add-utilisateur/add-utilisateur.component";
+import {
+  AfficherUtilisateursComponent
+} from "./components/AdminComponents/Utilisateur/afficher-utilisateurs/afficher-utilisateurs.component";
+import {
+  AfficherEquipementsComponent
+} from "./components/Equipement/afficher-equipements/afficher-equipements.component";
+import {AfficherPannesComponent} from "./components/AdminComponents/Panne/afficher-pannes/afficher-pannes.component";
+import {
+  AfficherTechniciensComponent
+} from "./components/AdminComponents/Utilisateur/afficher-techniciens/afficher-techniciens.component";
+import {AddTechnicienComponent} from "./components/AdminComponents/Utilisateur/add-technicien/add-technicien.component";
 
 const routes: Routes = [
+  {
+    path: 'admin',
+    component: UtilisateursComponent,
+    children:[
+      {path:'', component:AfficherUtilisateursComponent},
+      {path:'add', component:AddUtilisateurComponent},
+      {path:'addEquipement', component:AddEquipementComponent},
+      {path:'techniciens', component:AfficherTechniciensComponent},
+      {path:'techniciens/add', component:AddTechnicienComponent},
+      {path:'tikets', component:TicketComponent},
+      {path:'equipements', component: AfficherEquipementsComponent},
+      {path:'equipements/add', component: AddEquipementComponent},
+      {path:'equipements/updateEquipement/:id', component: UpdateEquipementComponent},
+      {path:'addPanne', component: CreatePanneComponent},
+      {path:'pannes', component: AfficherPannesComponent},
+      {path:'pannes/add', component: CreatePanneComponent},
+      {path:'equipements/statut/:id', component:ChangerStatutComponent},
+      {path:'updatePanne/:id', component: UpdatePanneComponent}
+    ]
+
+  },
   {path:'', component: AppComponent},
-  {path:'addEquipement', component:AddEquipementComponent},
-  {path:'tikets', component:TicketComponent},
-  {path:'equipements', component: EquipementComponent},
+  {path:'login', component:LoginComponent},
   {path:'utilisateur/equipements', component: EquipementsComponent},
-  {path:'updateEquipement/:id', component: UpdateEquipementComponent},
-  {path:'addPanne', component: CreatePanneComponent},
-  {path:'pannes', component: PannesComponent},
-  {path:'statut/:id', component:ChangerStatutComponent},
-  {path:'updatePanne/:id', component: UpdatePanneComponent}
+
 ];
 
 @NgModule({

@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Techniciens List</h2>
+  <a routerLink="add" class="btn btn-success">Ajouter Technicien</a>
+  <div class="cards">
+    <div class="card" style="width: 17rem;" *ngFor="let technicien of techniciens">
+      <div class="card-body">
+        <h5 class="card-title">{{ technicien.fullName }}</h5>
+        <p class="card-text">{{technicien.id}}</p>
+        <p class="card-text">{{technicien.email}}</p>
+      </div>
+    </div>
+  </div>
+</div>

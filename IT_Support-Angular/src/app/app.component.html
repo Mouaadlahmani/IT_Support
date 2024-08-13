@@ -1,22 +1,28 @@
 <nav class="navbar navbar-expand-sm navbar-dark">
   <ul class="navbar-nav">
-    <li>
-      <a routerLink="equipements" class="nav-link">Equipements</a>
+    <li *ngIf="!admin">
+      <a routerLink="admin/equipements" class="nav-link">Equipements</a>
     </li>
-    <li>
-      <a routerLink="addEquipement" class="nav-link">Add Equipement</a>
+    <li *ngIf="!admin">
+      <a routerLink="admin/pannes" class="nav-link">Pannes</a>
     </li>
-    <li>
-      <a routerLink="addPanne" class="nav-link">Add Panne</a>
+    <li *ngIf="!admin">
+      <a routerLink="admin/tikets" class="nav-link">Tikets</a>
     </li>
-    <li>
-      <a routerLink="pannes" class="nav-link">Pannes</a>
-    </li>
-    <li>
-      <a routerLink="tikets" class="nav-link">Tikets</a>
-    </li>
-    <li>
+    <li *ngIf="!admin">
       <a routerLink="utilisateur/equipements" class="nav-link">Equipements</a>
+    </li>
+    <li *ngIf="!admin">
+      <a routerLink="admin" class="nav-link">Utilisateurs</a>
+    </li>
+    <li *ngIf="!admin">
+      <a routerLink="admin/techniciens" class="nav-link">Techniciens</a>
+    </li>
+    <li *ngIf="!admin">
+      <a routerLink="login" class="nav-link">Login</a>
+    </li>
+    <li *ngIf="!admin">
+      <a (click)="logout()" routerLink="login" class="nav-link">Logout</a>
     </li>
   </ul>
 </nav>
