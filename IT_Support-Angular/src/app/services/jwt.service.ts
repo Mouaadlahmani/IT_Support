@@ -10,8 +10,6 @@ import {jwtDecode} from "jwt-decode";
 })
 export class JwtService {
 
-  private userId: number | null = null;
-  private username: string | null = null;
   private role: string[] | null = null;
 
   private url = "http://localhost:8080/api/auth/"

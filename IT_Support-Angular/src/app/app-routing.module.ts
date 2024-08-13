@@ -25,32 +25,33 @@ import {
   AfficherTechniciensComponent
 } from "./components/AdminComponents/Utilisateur/afficher-techniciens/afficher-techniciens.component";
 import {AddTechnicienComponent} from "./components/AdminComponents/Utilisateur/add-technicien/add-technicien.component";
+import {authGuardGuard} from "./guards/auth-guard.guard";
 
 const routes: Routes = [
   {
     path: 'admin',
-    component: UtilisateursComponent,
+    component: UtilisateursComponent, canActivate:[authGuardGuard],
     children:[
       {path:'', component:AfficherUtilisateursComponent},
-      {path:'add', component:AddUtilisateurComponent},
-      {path:'addEquipement', component:AddEquipementComponent},
-      {path:'techniciens', component:AfficherTechniciensComponent},
-      {path:'techniciens/add', component:AddTechnicienComponent},
-      {path:'tikets', component:TicketComponent},
-      {path:'equipements', component: AfficherEquipementsComponent},
-      {path:'equipements/add', component: AddEquipementComponent},
-      {path:'equipements/updateEquipement/:id', component: UpdateEquipementComponent},
-      {path:'addPanne', component: CreatePanneComponent},
-      {path:'pannes', component: AfficherPannesComponent},
-      {path:'pannes/add', component: CreatePanneComponent},
-      {path:'equipements/statut/:id', component:ChangerStatutComponent},
-      {path:'updatePanne/:id', component: UpdatePanneComponent}
+      {path:'add', component:AddUtilisateurComponent, canActivate:[authGuardGuard]},
+      {path:'addEquipement', component:AddEquipementComponent, canActivate:[authGuardGuard]},
+      {path:'techniciens', component:AfficherTechniciensComponent, canActivate:[authGuardGuard]},
+      {path:'techniciens/add', component:AddTechnicienComponent, canActivate:[authGuardGuard]},
+      {path:'tikets', component:TicketComponent, canActivate:[authGuardGuard]},
+      {path:'equipements', component: AfficherEquipementsComponent, canActivate:[authGuardGuard]},
+      {path:'equipements/add', component: AddEquipementComponent, canActivate:[authGuardGuard]},
+      {path:'equipements/updateEquipement/:id', component: UpdateEquipementComponent, canActivate:[authGuardGuard]},
+      {path:'addPanne', component: CreatePanneComponent, canActivate:[authGuardGuard]},
+      {path:'pannes', component: AfficherPannesComponent, canActivate:[authGuardGuard]},
+      {path:'pannes/add', component: CreatePanneComponent, canActivate:[authGuardGuard]},
+      {path:'equipements/statut/:id', component:ChangerStatutComponent, canActivate:[authGuardGuard]},
+      {path:'updatePanne/:id', component: UpdatePanneComponent, canActivate:[authGuardGuard]}
     ]
 
   },
   {path:'', component: AppComponent},
   {path:'login', component:LoginComponent},
-  {path:'utilisateur/equipements', component: EquipementsComponent},
+  {path:'utilisateur/equipements', component: EquipementsComponent, canActivate:[authGuardGuard]},
 
 ];
 
