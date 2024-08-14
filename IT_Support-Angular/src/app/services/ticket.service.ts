@@ -17,6 +17,17 @@ export class TicketService {
     return this.httpClient.get<Ticket[]>(this.url+'all',{ headers: headers || {} });
   }
 
+  getUtilisateurTickets(id: number): Observable<Ticket[]>{
+    const headers = this.createAuthorizationHeader();
+    return this.httpClient.get<Ticket[]>(`${this.url}mytickets/${id}`,{ headers: headers || {} });
+  }
+
+
+  getTechnicienTickets(id: number): Observable<Ticket[]>{
+    const headers = this.createAuthorizationHeader();
+    return this.httpClient.get<Ticket[]>(`${this.url}tickets/${id}`,{ headers: headers || {} });
+  }
+
   addTicket(tiket: Ticket):Observable<Ticket>{
     const headers = this.createAuthorizationHeader();
     return this.httpClient.post<Ticket>(this.url+'add', tiket,{ headers: headers || {} });

@@ -1,16 +1,143 @@
-.cards{
-  padding-top: 2%;
-  display: flex;
-  gap: 0.5em;
-  flex-wrap: wrap;
-}
-.container{
-  padding-top: 2%;
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-.body{
-  background-color: #5B99C2;
+  gap: 2em;
+  padding: 20px;
 }
 
+h2 {
+  color: #1F316F;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.btna {
+  color: white;
+  background-color: #1F316F;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.btna:hover {
+  background-color: #14244a;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title {
+  color: #1F316F;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.Btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  border: none;
+  padding: 0 20px;
+  background-color: #1F316F;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  transition-duration: 0.3s;
+  margin: 5px;
+}
+
+.Btn svg {
+  width: 13px;
+  position: absolute;
+  right: 10px;
+  fill: white;
+  transition-duration: 0.3s;
+}
+
+.Btn:hover {
+  color: transparent;
+}
+
+.Btn:hover svg {
+  right: 50%;
+  transition-duration: 0.3s;
+}
+
+.Btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0px rgb(140, 32, 212);
+}
+
+.btn-outline-danger,
+.btn-outline-dark {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 5px;
+}
+
+.btn-outline-danger {
+  border: 2px solid #dc3545;
+  color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-outline-dark {
+  border: 2px solid #343a40;
+  color: #343a40;
+}
+
+.btn-outline-dark:hover {
+  background-color: #343a40;
+  color: white;
+}
+.btn{
+  background-color: #1F316F;
+  color: white;
+}

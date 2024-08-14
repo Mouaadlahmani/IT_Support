@@ -5,7 +5,6 @@ export const authGuardGuard: CanActivateFn = (route,
                                               state) => {
   const token = localStorage.getItem('jwt');
   const router = inject(Router);
-  console.log("quard")
   if(token){
     return true;
   }else{

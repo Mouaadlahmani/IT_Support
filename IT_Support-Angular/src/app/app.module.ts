@@ -24,6 +24,8 @@ import { AfficherUtilisateursComponent } from './components/AdminComponents/Util
 import { AfficherEquipementsComponent } from './components/Equipement/afficher-equipements/afficher-equipements.component';
 import { AfficherPannesComponent } from './components/AdminComponents/Panne/afficher-pannes/afficher-pannes.component';
 import { AfficherTechniciensComponent } from './components/AdminComponents/Utilisateur/afficher-techniciens/afficher-techniciens.component';
+import { MyTicketsComponent } from './components/UtilisateurComponents/my-tickets/my-tickets.component';
+import { AssignerTicketComponent } from './components/AdminComponents/assigner-ticket/assigner-ticket.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { AfficherTechniciensComponent } from './components/AdminComponents/Utili
     AfficherUtilisateursComponent,
     AfficherEquipementsComponent,
     AfficherPannesComponent,
-    AfficherTechniciensComponent
+    AfficherTechniciensComponent,
+    MyTicketsComponent,
+    AssignerTicketComponent
   ],
   imports: [
     BrowserModule,

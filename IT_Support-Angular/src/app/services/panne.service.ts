@@ -24,7 +24,8 @@ export class PanneService {
   }
 
   updatePanne(id: number, panne: Panne):Observable<Object>{
-    return this.httpClient.put<Equipement>(`${this.baseUrl}edit/${id}`,panne)
+    const headers = this.CreateAuthorizationHeader();
+    return this.httpClient.put<Equipement>(`${this.baseUrl}edit/${id}`,panne,{ headers: headers || {} })
   }
 
   createPanne(panne: Panne):Observable<Object>{
