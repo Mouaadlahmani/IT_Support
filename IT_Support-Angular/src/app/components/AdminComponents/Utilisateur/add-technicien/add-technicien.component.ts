@@ -31,7 +31,7 @@ export class AddTechnicienComponent implements OnInit{
 
   onSubmit(){
     this.addUser();
-    this.router.navigate(['admin'])
+    this.router.navigate(['admin/techniciens'])
   }
 
 }

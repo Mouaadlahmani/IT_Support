@@ -1,3 +1,3 @@
 export enum EtatTicket {
-  TRAITTE,NOTRAITE,ENCOURS
+  TRAITTE=0,NOTRAITE=1,ENCOURS=2
 }

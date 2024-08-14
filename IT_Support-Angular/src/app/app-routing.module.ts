@@ -52,10 +52,16 @@ const routes: Routes = [
     ]
 
   },
+  {
+    path:'utilisateur',
+    component:EquipementsComponent,
+    children:[
+      {path:'tikets', component:MyTicketsComponent, canActivate:[authGuardGuard]},
+      {path:'equipements', component: EquipementsComponent, canActivate:[authGuardGuard]},
+    ]
+  },
   {path:'', component: AppComponent},
   {path:'login', component:LoginComponent},
-  {path:'utilisateur/tikets', component:MyTicketsComponent, canActivate:[authGuardGuard]},
-  {path:'utilisateur/equipements', component: EquipementsComponent, canActivate:[authGuardGuard]},
 
 ];
 
