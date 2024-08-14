@@ -12,10 +12,9 @@ L'objectif de ce système est de faciliter la gestion des équipements informati
  # Usecase
 
  
- <img src="https://github.com/Mouaadlahmani/IT_Support/blob/main/Uml/IT_Support%20DCU.png" alt="Image Title" height="350">
+ <img src="https://github.com/Mouaadlahmani/IT_Support/blob/main/Uml/IT_Support%20DS.png" alt="Image Title" height="350">
 
 
  # Diagramme de sequence
 
- 
- <img src="https://github.com/Mouaadlahmani/IT_Support/blob/main/Uml/IT_Support%20DS.png" alt="Image Title" height="350">
+ <img src="https://github.com/Mouaadlahmani/IT_Support/blob/main/Uml/IT_Support%20DCU.png" alt="Image Title" height="350">
