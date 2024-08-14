@@ -27,6 +27,7 @@ import {
 import {AddTechnicienComponent} from "./components/AdminComponents/Utilisateur/add-technicien/add-technicien.component";
 import {authGuardGuard} from "./guards/auth-guard.guard";
 import {MyTicketsComponent} from "./components/UtilisateurComponents/my-tickets/my-tickets.component";
+import {HistoriqueComponent} from "./components/Equipement/historique/historique.component";
 
 const routes: Routes = [
   {
@@ -42,6 +43,7 @@ const routes: Routes = [
       {path:'equipements', component: AfficherEquipementsComponent, canActivate:[authGuardGuard]},
       {path:'equipements/add', component: AddEquipementComponent, canActivate:[authGuardGuard]},
       {path:'equipements/updateEquipement/:id', component: UpdateEquipementComponent, canActivate:[authGuardGuard]},
+      {path:'equipements/historique/:id', component: HistoriqueComponent, canActivate:[authGuardGuard]},
       {path:'addPanne', component: CreatePanneComponent, canActivate:[authGuardGuard]},
       {path:'pannes', component: AfficherPannesComponent, canActivate:[authGuardGuard]},
       {path:'pannes/add', component: CreatePanneComponent, canActivate:[authGuardGuard]},

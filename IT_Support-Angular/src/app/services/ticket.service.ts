@@ -22,6 +22,11 @@ export class TicketService {
     return this.httpClient.get<Ticket[]>(`${this.url}mytickets/${id}`,{ headers: headers || {} });
   }
 
+  getEquipementTickets(id: number): Observable<Ticket[]>{
+    const headers = this.createAuthorizationHeader();
+    return this.httpClient.get<Ticket[]>(`${this.url}equipmentTickets/${id}`,{ headers: headers || {} });
+  }
+
 
   getTechnicienTickets(id: number): Observable<Ticket[]>{
     const headers = this.createAuthorizationHeader();

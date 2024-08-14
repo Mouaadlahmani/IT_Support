@@ -23,7 +23,7 @@ export class AfficherPannesComponent implements OnInit{
   }
 
   updatePanne(id: Number) {
-    this.router.navigate(['admin/updatePanne', id])
+    this.router.navigate(['admin/updatePanne', id]);
   }
 
   getPannes(){
