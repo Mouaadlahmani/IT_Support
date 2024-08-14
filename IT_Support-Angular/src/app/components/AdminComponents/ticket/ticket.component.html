@@ -1,16 +1,23 @@
 <div class="container">
-  <h2>Equipment List</h2>
+  <h2>Tickets</h2>
   <div class="cards">
     <div class="card" style="width: 17rem;" *ngFor="let tiket of tikets">
       <div class="card-body">
-        <h5 class="card-title">{{ tiket.equipment.name }}</h5>
-        <p class="card-text">{{tiket.description}}</p>
-        <p class="card-text">{{tiket.dateDeCreation}}</p>
-        <h5 class="card-title">{{ tiket.panne.name }}</h5>
-        <p class="card-text">{{tiket.EtatTicket}}</p>
-        <h5 class="card-title">{{ tiket.utilisateur.fullName }}</h5>
-        <h5 class="card-title">{{ tiket.technicien.fullName }}</h5>
-        <a href="#" class="btn btn-primary">Assinger Tichnicien</a>
+        <label of="equipement">Equipement</label>
+        <h5 name="equipement" class="card-title">{{ tiket.equipment.name }}</h5>
+        <label of="Description">Description</label>
+        <p name="Description" class="card-text">{{tiket.description}}</p>
+        <label of="Date">Date</label>
+        <p name="Date" class="card-text">{{tiket.dateDeCreation}}</p>
+        <label of="Panne">Panne</label>
+        <h5 name="Panne" class="card-title">{{ tiket.panne.name }}</h5>
+        <label of="Etat">Etat</label>
+        <p name="Etat" class="card-text">{{tiket.EtatTicket}}</p>
+        <label of="Utilisateur">Utilisateur</label>
+        <h5 name="Utilisateur" class="card-title">{{ tiket.utilisateur.fullName }}</h5>
+        <label of="Technicien">Technicien</label>
+        <h5 name="Technicien" class="card-title">{{ tiket.technicien.fullName }}</h5>
+        <a href="#" class="btn">Assinger Tichnicien</a>
       </div>
     </div>
   </div>

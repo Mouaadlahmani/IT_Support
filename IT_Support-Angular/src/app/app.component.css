@@ -1,3 +1,88 @@
-.navbar{
-  background-color: #1F316F;
+/* Navbar Styles */
+.navbar {
+  background-color: #1F316F; /* Dark background */
+  border-bottom: 2px solid #1A2A61; /* Slightly darker border */
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: #f8f9fa; /* Light text color */
+  font-weight: 500; /* Slightly bolder font */
+  transition: color 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
+}
+
+.nav-link:hover {
+  color: #FFD700; /* Highlight text color on hover */
+  background-color: #1A2A61; /* Darker background color on hover */
+  border-radius: 4px; /* Slightly rounded corners */
+}
+
+.nav-link.active {
+  color: #FFD700; /* Highlight active link */
+  background-color: #1A2A61; /* Darker background color for active link */
+  border-radius: 4px; /* Slightly rounded corners */
+}
+
+.navbar-toggler {
+  border: none; /* Remove default border */
+}
+
+.navbar-toggler-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; /* Set width */
+  height: 24px; /* Set height */
+  color: #f8f9fa; /* Set color to match the navbar text */
+}
+
+.navbar-toggler-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Optional: Adding a shadow for better depth */
+.navbar {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 576px) {
+  .navbar-nav {
+    text-align: center; /* Center align on small screens */
+  }
+
+  .nav-link {
+    padding: 10px 0; /* Add vertical padding for mobile */
+  }
+}
+
+.nav-link svg {
+  margin-right: 8px; /* Space between icon and text */
+  fill: currentColor; /* Ensure SVG inherits text color */
+  vertical-align: middle; /* Align with text */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: #f8f9fa; /* Light text color */
+}
+
+.navbar-brand svg {
+  width: 32px; /* Adjust size as needed */
+  height: 32px;
+  margin-right: 8px; /* Space between logo and text */
+}
+
+.logo-text {
+  font-size: 1.25rem; /* Adjust size as needed */
+  font-weight: 700; /* Bold text */
 }

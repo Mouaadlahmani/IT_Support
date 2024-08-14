@@ -26,6 +26,7 @@ import {
 } from "./components/AdminComponents/Utilisateur/afficher-techniciens/afficher-techniciens.component";
 import {AddTechnicienComponent} from "./components/AdminComponents/Utilisateur/add-technicien/add-technicien.component";
 import {authGuardGuard} from "./guards/auth-guard.guard";
+import {MyTicketsComponent} from "./components/UtilisateurComponents/my-tickets/my-tickets.component";
 
 const routes: Routes = [
   {
@@ -51,6 +52,7 @@ const routes: Routes = [
   },
   {path:'', component: AppComponent},
   {path:'login', component:LoginComponent},
+  {path:'utilisateur/tikets', component:MyTicketsComponent, canActivate:[authGuardGuard]},
   {path:'utilisateur/equipements', component: EquipementsComponent, canActivate:[authGuardGuard]},
 
 ];

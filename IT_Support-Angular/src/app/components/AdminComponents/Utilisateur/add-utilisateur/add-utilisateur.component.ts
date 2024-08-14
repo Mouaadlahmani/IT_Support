@@ -13,7 +13,6 @@ import {Role} from "../../../../classes/enums/role";
 export class AddUtilisateurComponent implements OnInit{
 
   utilisateur: Utilisateur = new Utilisateur();
-  role = Role;
 
   constructor(private service: TechnicienUserService,
               private router: Router) {
