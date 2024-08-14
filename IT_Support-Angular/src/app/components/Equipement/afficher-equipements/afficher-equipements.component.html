@@ -3,7 +3,7 @@
   <a style="width: 50%" routerLink="add" class="btn btna">Ajouter Equipement</a>
   <div class="cards">
     <div class="card" style="width: 16rem;" *ngFor="let equipment of equipments">
-      <img class="card-img-top" src="{{equipment.imgUrl}}" alt="Card image cap">
+      <img (click)="historique(equipment.equipementId)" class="card-img-top" src="{{equipment.imgUrl}}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{ equipment.name }}</h5>
         <p class="card-text">{{equipment.statut}}</p>

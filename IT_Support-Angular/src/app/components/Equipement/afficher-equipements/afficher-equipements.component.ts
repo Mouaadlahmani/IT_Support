@@ -31,6 +31,9 @@ export class AfficherEquipementsComponent implements OnInit{
   updateEquipement(id: Number) {
     this.router.navigate(['admin/equipements/updateEquipement', id])
   }
+  historique(id: Number) {
+    this.router.navigate(['admin/equipements/historique', id])
+  }
 
   changerEquipement(id: Number) {
     this.router.navigate(['admin/equipements/statut', id])

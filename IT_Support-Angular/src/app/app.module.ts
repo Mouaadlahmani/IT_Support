@@ -26,6 +26,7 @@ import { AfficherPannesComponent } from './components/AdminComponents/Panne/affi
 import { AfficherTechniciensComponent } from './components/AdminComponents/Utilisateur/afficher-techniciens/afficher-techniciens.component';
 import { MyTicketsComponent } from './components/UtilisateurComponents/my-tickets/my-tickets.component';
 import { AssignerTicketComponent } from './components/AdminComponents/assigner-ticket/assigner-ticket.component';
+import { HistoriqueComponent } from './components/Equipement/historique/historique.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AssignerTicketComponent } from './components/AdminComponents/assigner-t
     AfficherPannesComponent,
     AfficherTechniciensComponent,
     MyTicketsComponent,
-    AssignerTicketComponent
+    AssignerTicketComponent,
+    HistoriqueComponent
   ],
   imports: [
     BrowserModule,
