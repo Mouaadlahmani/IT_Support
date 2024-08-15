@@ -21,9 +21,6 @@ export class JwtService {
     return this.http.post<Jwt>(this.url + 'authenticate', loginRequest)
   }
 
-  isLoggedIn(): boolean {
-    return !!this.getToken();
-  }
   getToken(): string | null {
     return localStorage.getItem('jwt');
   }

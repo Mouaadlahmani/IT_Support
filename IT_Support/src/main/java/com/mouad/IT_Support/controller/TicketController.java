@@ -16,9 +16,9 @@ public class TicketController {
     @Autowired
     TicketService ticketService;
 
-    @PostMapping("/add")
-    public Ticket addTicket(@RequestBody Ticket ticket){
-        return ticketService.addTicket(ticket);
+    @PostMapping("/add/{id}")
+    public Ticket addTicket(@PathVariable Long id,@RequestBody Ticket ticket){
+        return ticketService.addTicket(id,ticket);
     }
 
     @GetMapping("/all")

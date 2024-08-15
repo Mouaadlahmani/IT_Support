@@ -30,8 +30,8 @@ public class TicketServiceImpl implements TicketService {
     private EquipmentRepository equipmentRepository;
 
     @Override
-    public Ticket addTicket(Ticket ticket) {
-        Utilisateur utilisateur = (Utilisateur) personneRepository.findById(ticket.getUtilisateur().getId())
+    public Ticket addTicket(Long id,Ticket ticket) {
+        Utilisateur utilisateur = (Utilisateur) personneRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
         ticket.setStatut(EtatTicket.NOTRAITE);
         ticket.setUtilisateur(utilisateur);

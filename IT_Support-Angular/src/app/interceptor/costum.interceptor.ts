@@ -13,11 +13,11 @@ export class CostumInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const token = localStorage.getItem('token');
-    if (token) {
+    const jwtToken = localStorage.getItem('jwt');
+    if (jwtToken) {
       request = request.clone({
         setHeaders: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${jwtToken}`
         }
       });
     }
